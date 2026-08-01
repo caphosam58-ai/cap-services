@@ -465,6 +465,175 @@
         }
     </script>
 </body>
+    </html>, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--neon-green), #15803d);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 15.5px;
+            font-weight: 800;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(34, 197, 94, 0.5); }
+
+        footer { text-align: center; padding: 22px; border-top: 1px solid rgba(255, 255, 255, 0.05); color: var(--text-dim); font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 30px; }
+            .hero p { font-size: 14px; }
+            .form-box { padding: 25px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <header>
+        <div class="logo">Cap <span>Hosam</span> 👑</div>
+        <a href="#order" class="btn-header">طلب موقع جديد</a>
+    </header>
+
+    <section class="hero">
+        <div class="badge">💎 برمجيات ومتاجر عالية الأداء والاحترافية</div>
+        <h1>تصميم برلمجي <span>فاخر ومخصص</span> يرفع مبيعاتك وهيبتك التجارية</h1>
+        <p>مرحباً بك! أنا المبرمج حسام (Cap Hosam). أقدم لك حلولاً برمجية وتصاميم متطورة للمواقع والمتاجر الإلكترونية بأعلى دقة ومعايير سرعة عالمية.</p>
+        <a href="#order" class="hero-btn">📲 حجز استشارة برمجية مجانية عبر WhatsApp</a>
+    </section>
+
+    <!-- الباقات والأسعار -->
+    <section class="pricing-section">
+        <h2 class="sec-title">باقات البرمجة الاحترافية 💎</h2>
+        <p class="sec-sub">جودة لا تضاهى مع سرعة استجابة وتصميم استثنائي لكل مشروع</p>
+
+        <div class="pricing-grid">
+            
+            <!-- باقة 1 -->
+            <div class="price-card">
+                <div>
+                    <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
+                    <div class="card-price">3,500 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>تصميم Cyberpunk / VIP فاخر</li>
+                        <li>أنيميشن وتأثيرات بصرية عالية</li>
+                        <li>نماذج حجز فورية وتحويل للواتساب</li>
+                        <li>سرعة فائقة وترتيب عالي على Google</li>
+                        <li>استضافة ودومين موثوق مدى الحياة</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" onclick="selectPackage('صفحة هبوط احترافية (3,500 EGP)')">طلب هذه الباقة</a>
+            </div>
+
+            <!-- باقة 2 (VIP) -->
+            <div class="price-card featured">
+                <div class="featured-tag">الباقة الذهبية 🌟</div>
+                <div>
+                    <div class="card-title">🌐 موقع تعريفي متكامل</div>
+                    <div class="card-price">6,500 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>من 5 لـ 8 صفحات متعددة للشركات</li>
+                        <li>معرض أعمال وتصنيفات تفاعلية</li>
+                        <li>لوحة تحكم ونماذج ربط مباشرة</li>
+                        <li>تهيئة كاملة لمحركات البحث (SEO)</li>
+                        <li>دعم فني وتطوير مجاني لمدة سنة</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" onclick="selectPackage('موقع تعريفي متكامل (6,500 EGP)')">طلب الباقة الذهبية</a>
+            </div>
+
+            <!-- باقة 3 -->
+            <div class="price-card">
+                <div>
+                    <div class="card-title">🛒 متجر إلكتروني احترافي</div>
+                    <div class="card-price">12,000 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>نظام مبيعات وسلة مشتريات ذكية</li>
+                        <li>ربط فودافون كاش، الفيزا والواتساب</li>
+                        <li>لوحة إدارة للطلبات والمنتجات</li>
+                        <li>حماية جبارة وتشفير للبيانات 100%</li>
+                        <li>ربط أدوات التحليل والإعلانات</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" onclick="selectPackage('متجر إلكتروني احترافي (12,000 EGP)')">طلب المتجر الكامل</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- النموذج -->
+    <section class="form-section" id="order">
+        <div class="form-box">
+            <h3>بدء مشروعك الخاص الآن 📲</h3>
+            <p>أدخل بياناتك وسيتم تحويلك فوراً للاتفاق على تفاصيل التنفيذ والعربون</p>
+
+            <input type="text" id="clientName" placeholder="الاسم الكريم / اسم المؤسسة">
+            <input type="tel" id="clientPhone" placeholder="رقم الموبايل / الواتساب">
+            
+            <select id="serviceSelect">
+                <option value="" disabled selected>اختر الباقة المطلوبة للمشروع</option>
+                <option value="صفحة هبوط احترافية (3,500 EGP)">صفحة هبوط VIP (3,500 EGP)</option>
+                <option value="موقع تعريفي متكامل (6,500 EGP)">موقع تعريفي متكامل (6,500 EGP)</option>
+                <option value="متجر إلكتروني احترافي (12,000 EGP)">متجر إلكتروني احترافي (12,000 EGP)</option>
+                <option value="مشروع برمجي مخصص">طلب مشروع برمتجي مخصص</option>
+            </select>
+
+            <textarea id="clientNotes" rows="3" placeholder="أضف أفكارك أو متطلباتك الخاصة للموقع"></textarea>
+
+            <button class="submit-btn" onclick="sendToWhatsapp()">📲 بدء المحادثة وتأكيد الطلب</button>
+        </div>
+    </section>
+
+    <footer>
+        جميع الحقوق محفوظة © | المبرمج Cap Hosam 💻
+    </footer>
+
+    <script>
+        function selectPackage(packageName) {
+            document.getElementById('serviceSelect').value = packageName;
+        }
+
+        function sendToWhatsapp() {
+            var name = document.getElementById('clientName').value.trim();
+            var phone = document.getElementById('clientPhone').value.trim();
+            var service = document.getElementById('serviceSelect').value;
+            var notes = document.getElementById('clientNotes').value.trim();
+
+            if(!name || !phone || !service) {
+                alert('يرجى إكمال بيانات الاسم، الرقم، والباقة لنتمكن من خدمتكم بشكل أسرع 🌹');
+                return;
+            }
+
+            var myNumber = "201029245615";
+            var text = "أهلاً المبرمج كابتن حسام (Cap Hosam) 👋\n\nأنا: " + name + "\nرقمي: " + phone + "\nمحتاج أطلب: (" + service + ")\n";
+            if(notes) {
+                text += "ملاحظات وتفاصيل المشروع: " + notes + "\n";
+            }
+            text += "\nأود الاتفاق على التفاصيل، التسليم، والعربون لبدء العمل. شكراً لك! ✨";
+
+            window.location.href = "https://wa.me/" + myNumber + "?text=" + encodeURIComponent(text);
+        }
+    </script>
+</body>
     </html>color 0.3s;
         }
 
