@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap Hosam | عالم البرمجة والتطوير الفاخر</title>
+    <title>Cap Hosam | تصميم وتطوير المواقع</title>
     
-    <!-- خطوط جوجل الاحترافية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-main: #020617;
-            --card-bg: rgba(15, 23, 42, 0.85);
-            --neon-green: #00ff66;
-            --neon-blue: #38bdf8;
-            --neon-purple: #a855f7;
-            --neon-gold: #f59e0b;
-            --text-light: #f8fafc;
-            --text-dim: #94a3b8;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --green: #22c55e;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -31,10 +28,312 @@
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-light);
-            min-height: 100vh;
-            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .btn-header {
+            background: var(--primary);
+            color: #0f172a;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-whatsapp {
+            background: var(--green);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Packages */
+        .packages {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sec-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+        }
+
+        .card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
+
+        .card-price span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .features li::before {
+            content: "✓ ";
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .card-btn {
+            display: block;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Form */
+        .form-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .form-box h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 12px;
+            outline: none;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cap <span>Hosam</span> 💻</div>
+        <a href="#order" class="btn-header">اطلب موقعك</a>
+    </header>
+
+    <section class="hero">
+        <div class="badge">المبرمج Cap Hosam</div>
+        <h1>تصميم ومواقع <span>احترافية وسريعة</span> لتكبير شغلك</h1>
+        <p>برمجة مواقع وتصاميم حديثة ومستجيبة مع الموبايل بالكامل مع ربط مباشر بالواتساب.</p>
+        <a href="https://wa.me/201029245615" class="btn-whatsapp">💬 تواصل واتساب مباشرةً</a>
+    </section>
+
+    <section class="packages">
+        <h2 class="sec-title">باقات الخدمات والأسعار 💎</h2>
+
+        <div class="card">
+            <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
+            <div class="card-price">1,200 <span>جنيه</span></div>
+            <ul class="features">
+                <li>صفحة هبوط تسويقية مركزة</li>
+                <li>تصميم مودرن وسريع للموبايل</li>
+                <li>أزرار تحويل للواتساب</li>
+                <li>تسليم خلال 24-48 ساعة</li>
+            </ul>
+            <a href="#order" class="card-btn" onclick="setService('صفحة هبوط (1200 جنيه)')">اختيار هذه الباقة</a>
+        </div>
+
+        <div class="card featured">
+            <div class="card-title">🌐 موقع تعريفي كامل</div>
+            <div class="card-price">2,500 <span>جنيه</span></div>
+            <ul class="features">
+                <li>من 3 إلى 5 صفحات متعددة</li>
+                <li>معرض أعمال وخدمات</li>
+                <li>نموذج تواصل مباشر</li>
+                <li>دعم فني وتعديلات</li>
+            </ul>
+            <a href="#order" class="card-btn" style="background: var(--primary); color: #0f172a;" onclick="setService('موقع تعريفي (2500 جنيه)')">اختيار الباقة المميزة</a>
+        </div>
+
+        <div class="card">
+            <div class="card-title">🛒 متجر إلكتروني</div>
+            <div class="card-price">4,500 <span>جنيه</span></div>
+            <ul class="features">
+                <li>عرض المنتجات والأقسام</li>
+                <li>سلة مشتريات وتأكيد طلبات</li>
+                <li>ربط فودافون كاش والواتساب</li>
+            </ul>
+            <a href="#order" class="card-btn" onclick="setService('متجر إلكتروني (4500 جنيه)')">اختيار هذه الباقة</a>
+        </div>
+    </section>
+
+    <section class="packages" id="order">
+        <div class="form-box">
+            <h3>تأكيد الطلب 📲</h3>
+            <input type="text" id="cName" placeholder="الاسم الكريم">
+            <input type="tel" id="cPhone" placeholder="رقم الموبايل / الواتساب">
+            <select id="cService">
+                <option value="" disabled selected>اختر الخدمة المطلوبة</option>
+                <option value="صفحة هبوط (1200 جنيه)">صفحة هبوط (1,200 جنيه)</option>
+                <option value="موقع تعريفي (2500 جنيه)">موقع تعريفي (2,500 جنيه)</option>
+                <option value="متجر إلكتروني (4500 جنيه)">متجر إلكتروني (4,500 جنيه)</option>
+            </select>
+            <textarea id="cNotes" rows="3" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+            <button class="btn-submit" onclick="sendToWA()">📲 إرسال الطلب عبر الواتساب</button>
+        </div>
+    </section>
+
+    <footer>
+        جميع الحقوق محفوظة © Cap Hosam
+    </footer>
+
+    <script>
+        function setService(val) {
+            document.getElementById('cService').value = val;
+        }
+
+        function sendToWA() {
+            var name = document.getElementById('cName').value.trim();
+            var phone = document.getElementById('cPhone').value.trim();
+            var service = document.getElementById('cService').value;
+            var notes = document.getElementById('cNotes').value.trim();
+
+            if(!name || !phone || !service) {
+                alert('يرجى كتابة الاسم والرقم واختيار الخدمة 🌹');
+                return;
+            }
+
+            var text = "أهلاً Cap Hosam 👋\n" +
+                       "الاسم: " + name + "\n" +
+                       "الرقم: " + phone + "\n" +
+                       "الطلب: " + service + "\n" +
+                       (notes ? "ملاحظات: " + notes : "");
+
+            window.location.href = "https://wa.me/201029245615?text=" + encodeURIComponent(text);
+        }
+    </script>
+</body>
+    </html>            overflow-x: hidden;
         }
 
         /* -----------------------------------------------
