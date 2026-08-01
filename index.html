@@ -452,6 +452,198 @@
                 if (charIdx <= lines[lineIdx].length) {
                     setTimeout(typeTerminal, 25);
                 } else {
+                    currentLineDiv.innerHTML = lines[lineIdx];
+                    lineIdx++;
+                    charIdx = 0;
+                    setTimeout(typeTerminal, 180);
+                }
+            } else {
+                setTimeout(() => {
+                    document.getElementById('intro-terminal').classList.add('hide-terminal');
+                    clearInterval(matrixInterval);
+                }, 800);
+            }
+        }
+
+        window.addEventListener('load', typeTerminal);
+
+        function selectPackage(packageName) {
+            document.getElementById('serviceSelect').value = packageName;
+        }
+
+        function sendToWhatsapp() {
+            var name = document.getElementById('clientName').value.trim();
+            var phone = document.getElementById('clientPhone').value.trim();
+            var service = document.getElementById('serviceSelect').value;
+            var notes = document.getElementById('clientNotes').value.trim();
+
+            if(!name || !phone || !service) {
+                alert('يرجى ملء البيانات المطلوبة لطلب الاستشارة 🌹');
+                return;
+            }
+
+            var text = "أهلاً المبرمج كابتن حسام (Cap Hosam) 👋\n\nأنا: " + name + "\nرقمي: " + phone + "\nمحتاج أطلب: (" + service + ")\n" + (notes ? "ملاحظات: " + notes : "");
+            window.location.href = "https://wa.me/201029245615?text=" + encodeURIComponent(text);
+        }
+    </script>
+</body>
+    </html>            <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+                <div class="terminal-title">caphosam-engine.sh — 80x24</div>
+            </div>
+            <div class="terminal-body" id="terminal-text"></div>
+        </div>
+    </div>
+
+    <!-- أضواء الخلفية -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
+    <header>
+        <div class="logo">Cap <span>Hosam</span> 💻</div>
+        <a href="#order" class="btn-header">طلب مشروع جديد</a>
+    </header>
+
+    <section class="hero">
+        <div class="badge">⚙️ المبرمج المطور Cap Hosam</div>
+        <h1>مرحباً بك في <span>عالم البرمجة والمتاجر الإلكترونية</span> الفاخرة</h1>
+        <p>تصاميم برمجية مخصصة وعالية الأداء تعطي لعلامتك التجارية القوة والهيبة والمبيعات المضاعفة.</p>
+        <a href="#order" class="btn-header" style="padding: 15px 30px; font-size: 16px; background: linear-gradient(135deg, var(--neon-green), #16a34a);">📲 استشارة برمجية مباشرة عبر WhatsApp</a>
+    </section>
+
+    <section class="pricing-section">
+        <h2 class="sec-title">باقات البرمجة الاحترافية 💎</h2>
+        <p class="sec-sub">دقة المبرمج وسرعة الأداء في كل كود</p>
+
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div>
+                    <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
+                    <div class="card-price">3,500 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>تصميم Cyberpunk مخصص</li>
+                        <li>سرعة استجابة فائقة</li>
+                        <li>ربط مباشر مع الواتساب</li>
+                        <li>استضافة مجانية</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" onclick="selectPackage('صفحة هبوط احترافية')">طلب الباقة</a>
+            </div>
+
+            <div class="price-card featured">
+                <div>
+                    <div class="card-title">🌐 موقع تعريفي متكامل</div>
+                    <div class="card-price">6,500 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>من 5 لـ 8 صفحات احترافية</li>
+                        <li>معرض أعمال تفاعلي</li>
+                        <li>تهيئة محركات البحث SEO</li>
+                        <li>دعم فني واستضافة سنة</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" style="background: var(--neon-gold); color: #020617;" onclick="selectPackage('موقع تعريفي متكامل')">طلب الباقة الذهبية</a>
+            </div>
+
+            <div class="price-card">
+                <div>
+                    <div class="card-title">🛒 متجر إلكتروني احترافي</div>
+                    <div class="card-price">12,000 <span>EGP</span></div>
+                    <ul class="features-list">
+                        <li>سلة مشتريات ذكية</li>
+                        <li>ربط فودافون كاش وفيزا</li>
+                        <li>لوحة إدارة منتجات كاملة</li>
+                        <li>حماية جبارة وترتيب سريع</li>
+                    </ul>
+                </div>
+                <a href="#order" class="card-btn" onclick="selectPackage('متجر إلكتروني احترافي')">طلب المتجر</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-section" id="order">
+        <div class="form-box">
+            <h3 style="text-align: center; margin-bottom: 10px;">بدء مشروعك مع Cap Hosam 💻</h3>
+            <p style="text-align: center; color: var(--text-dim); font-size: 13.5px; margin-bottom: 20px;">ادخل بياناتك وسيتم توجيهك فوراً للمحادثة المباشرة</p>
+
+            <input type="text" id="clientName" placeholder="الاسم الكريم">
+            <input type="tel" id="clientPhone" placeholder="رقم الموبايل / الواتساب">
+            
+            <select id="serviceSelect">
+                <option value="" disabled selected>اختر الباقة البرمجية</option>
+                <option value="صفحة هبوط احترافية">صفحة هبوط (3,500 EGP)</option>
+                <option value="موقع تعريفي متكامل">موقع تعريفي متكامل (6,500 EGP)</option>
+                <option value="متجر إلكتروني احترافي">متجر إلكتروني (12,000 EGP)</option>
+            </select>
+
+            <textarea id="clientNotes" rows="3" placeholder="تفاصيل أو أفكار إضافية لمشروعك"></textarea>
+
+            <button class="submit-btn" onclick="sendToWhatsapp()">📲 إرسال وتأكيد الطلب</button>
+        </div>
+    </section>
+
+    <footer>جميع الحقوق محفوظة © | المبرمج Cap Hosam 👨‍💻</footer>
+
+    <!-- 📜 جافاسكريبت تأثير الـ Matrix والترميز البرمجي -->
+    <script>
+        // خلفية Matrix Rain
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const katakana = '0123456789ABCDEF{}[]<>/$#@%&*';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const rainDrops = Array.from({ length: columns }).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(3, 7, 18, 0.08)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff66';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = katakana.charAt(Math.floor(Math.random() * katakana.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        }
+        const matrixInterval = setInterval(drawMatrix, 30);
+
+        // كتابة الأكواد في التيرمينال
+        const lines = [
+            "> Initializing Cap Hosam Core Engine v3.8...",
+            "> Loading Cyber Security & High-Performance Libraries...",
+            "> Connecting to Developer Host Services... [OK]",
+            "> System Status: ONLINE.",
+            "> Welcome to Cap Hosam Development World 🚀"
+        ];
+
+        const terminalText = document.getElementById('terminal-text');
+        let lineIdx = 0;
+        let charIdx = 0;
+
+        function typeTerminal() {
+            if (lineIdx < lines.length) {
+                if (charIdx === 0) {
+                    const lineDiv = document.createElement('div');
+                    lineDiv.id = 'line-' + lineIdx;
+                    terminalText.appendChild(lineDiv);
+                }
+                
+                const currentLineDiv = document.getElementById('line-' + lineIdx);
+                currentLineDiv.innerHTML = lines[lineIdx].substring(0, charIdx + 1) + '<span class="cursor"></span>';
+                charIdx++;
+
+                if (charIdx <= lines[lineIdx].length) {
+                    setTimeout(typeTerminal, 25);
+                } else {
                     // شيل الكيرسر من السطر اللي خلص
                     currentLineDiv.innerHTML = lines[lineIdx];
                     lineIdx++;
