@@ -3,23 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap Hosam | عالم البرمجة والتطوير الفاخر</title>
+    <title>Cap Hosam | تصميم وتطوير المواقع</title>
     
-    <!-- خطوط جوجل الاحترافية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-main: #020617;
-            --card-bg: rgba(15, 23, 42, 0.85);
-            --neon-green: #00ff66;
-            --neon-blue: #38bdf8;
-            --neon-purple: #a855f7;
-            --neon-gold: #f59e0b;
-            --text-light: #f8fafc;
-            --text-dim: #94a3b8;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --primary: #38bdf8;
+            --green: #22c55e;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -31,460 +28,307 @@
         }
 
         body {
-            background-color: var(--bg-main);
-            color: var(--text-light);
-            min-height: 100vh;
-            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 40px;
         }
 
-        /* -----------------------------------------------
-           💻 شاشة عالم البرمجة والـ Matrix (Intro Screen)
-        ----------------------------------------------- */
-        #intro-terminal {
-            position: fixed;
-            inset: 0;
-            background-color: #030712;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow: hidden;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-
-        /* خلفية مصفوفة الأكواد */
-        #matrix-canvas {
-            position: absolute;
-            inset: 0;
-            opacity: 0.25;
-            z-index: 1;
-        }
-
-        .terminal-box {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 580px;
-            background: rgba(10, 15, 30, 0.95);
-            border: 1px solid rgba(0, 255, 102, 0.4);
-            border-radius: 16px;
-            box-shadow: 0 0 35px rgba(0, 255, 102, 0.2);
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-
-        .terminal-header {
-            background: rgba(15, 23, 42, 0.9);
-            padding: 12px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .terminal-dots {
-            display: flex;
-            gap: 8px;
-        }
-
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .dot-red { background: #ef4444; }
-        .dot-yellow { background: #f59e0b; }
-        .dot-green { background: #10b981; }
-
-        .terminal-title {
-            font-family: 'Fira Code', monospace;
-            font-size: 12px;
-            color: var(--text-dim);
-            letter-spacing: 1px;
-        }
-
-        .terminal-body {
-            padding: 25px 20px;
-            font-family: 'Fira Code', monospace;
-            font-size: 14px;
-            color: var(--neon-green);
-            direction: ltr;
-            text-align: left;
-            min-height: 180px;
-            line-height: 1.8;
-            position: relative;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 8px;
-            height: 16px;
-            background-color: var(--neon-green);
-            animation: blink 0.7s infinite;
-            vertical-align: middle;
-            margin-left: 4px;
-        }
-
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-        .hide-terminal {
-            opacity: 0 !important;
-            visibility: hidden !important;
-        }
-
-        /* -----------------------------------------------
-           🌌 محتوى الموقع بعد تجميع الكود
-        ----------------------------------------------- */
-        .glow-bg {
-            position: fixed;
-            width: 450px;
-            height: 450px;
-            border-radius: 50%;
-            filter: blur(150px);
-            opacity: 0.2;
-            pointer-events: none;
-            z-index: 0;
-            animation: floatBg 8s infinite alternate ease-in-out;
-        }
-
-        .glow-1 { top: -100px; right: -100px; background: var(--neon-blue); }
-        .glow-2 { bottom: -100px; left: -100px; background: var(--neon-purple); animation-delay: -4s; }
-
-        @keyframes floatBg {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(30px, 30px); }
-        }
-
+        /* Header */
         header {
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 16px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .logo { font-size: 22px; font-weight: 900; }
-        .logo span { color: var(--neon-blue); text-shadow: 0 0 12px rgba(56, 189, 248, 0.6); }
+        .logo {
+            font-size: 20px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .logo span { color: var(--primary); }
 
         .btn-header {
-            background: linear-gradient(135deg, var(--neon-blue), #0284c7);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 12px;
+            background: var(--primary);
+            color: #0f172a;
+            padding: 8px 16px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 13.5px;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
-            transition: all 0.3s ease;
+            font-size: 14px;
         }
 
+        /* Hero Section */
         .hero {
-            position: relative;
-            z-index: 1;
-            padding: 50px 6% 40px;
+            padding: 40px 20px;
             text-align: center;
-            max-width: 900px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         .badge {
-            display: inline-block;
-            background: rgba(0, 255, 102, 0.1);
-            border: 1px solid rgba(0, 255, 102, 0.3);
-            color: var(--neon-green);
-            padding: 8px 18px;
-            border-radius: 30px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 13px;
             font-weight: 700;
-            margin-bottom: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
-        .hero h1 { font-size: 38px; font-weight: 900; line-height: 1.3; margin-bottom: 18px; }
-        .hero h1 span {
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-gold), var(--neon-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: #fff;
         }
 
-        .hero p { color: var(--text-dim); font-size: 15.5px; line-height: 1.7; max-width: 700px; margin: 0 auto 28px; }
+        .hero h1 span { color: var(--primary); }
 
-        .pricing-section {
-            position: relative;
-            z-index: 1;
-            padding: 40px 6%;
-            max-width: 1200px;
+        .hero p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn-whatsapp {
+            background: var(--green);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 16px;
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        /* Packages */
+        .packages {
+            padding: 20px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        .sec-title { text-align: center; font-size: 28px; font-weight: 900; margin-bottom: 8px; }
-        .sec-sub { text-align: center; color: var(--text-dim); font-size: 14.5px; margin-bottom: 40px; }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 22px;
+        .sec-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 25px;
         }
 
-        .price-card {
+        .card {
             background: var(--card-bg);
-            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 22px;
-            padding: 30px 22px;
-            position: relative;
-            transition: all 0.35s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            border-radius: 16px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
         }
 
-        .price-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(56, 189, 248, 0.4);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        .card.featured {
+            border: 2px solid var(--primary);
         }
 
-        .price-card.featured { border: 2px solid var(--neon-gold); }
+        .card-title {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
 
-        .card-title { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-        .card-price { font-size: 32px; font-weight: 900; color: var(--neon-green); margin-bottom: 16px; }
+        .card-price {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--green);
+            margin-bottom: 15px;
+        }
 
-        .features-list { list-style: none; margin-bottom: 22px; }
-        .features-list li { font-size: 13.5px; color: var(--text-dim); margin-bottom: 11px; display: flex; align-items: center; gap: 8px; }
-        .features-list li::before { content: "✓"; color: var(--neon-green); font-weight: 900; }
+        .card-price span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .features li::before {
+            content: "✓ ";
+            color: var(--green);
+            font-weight: bold;
+        }
 
         .card-btn {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            background: rgba(255, 255, 255, 0.08);
             color: #fff;
             text-align: center;
-            padding: 13px;
-            border-radius: 12px;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 14px;
-            transition: all 0.3s ease;
         }
 
-        .form-section { padding: 50px 6% 70px; max-width: 720px; margin: 0 auto; }
-        .form-box { background: var(--card-bg); border-radius: 22px; padding: 35px 25px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        /* Form */
+        .form-box {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .form-box h3 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
 
         input, select, textarea {
-            width: 100%; padding: 14px 16px; background: rgba(10, 18, 36, 0.85); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; color: #fff; margin-bottom: 14px; outline: none;
+            width: 100%;
+            padding: 12px 15px;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 12px;
+            outline: none;
         }
 
-        .submit-btn {
-            width: 100%; background: linear-gradient(135deg, var(--neon-green), #15803d); color: #fff; border: none; padding: 15px; font-size: 15.5px; font-weight: 800; border-radius: 12px; cursor: pointer;
+        .btn-submit {
+            width: 100%;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
         }
 
-        footer { text-align: center; padding: 22px; color: var(--text-dim); font-size: 13px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 30px; }
-            .terminal-body { font-size: 12px; }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 💻 شاشة تحضير مصفوفة الأكواد -->
-    <div id="intro-terminal">
-        <canvas id="matrix-canvas"></canvas>
-        <div class="terminal-box">
-            <div class="terminal-header">
-                <div class="terminal-dots">
-                    <span class="dot dot-red"></span>
-                    <span class="dot dot-yellow"></span>
-                    <span class="dot dot-green"></span>
-                </div>
-                <div class="terminal-title">caphosam-engine.sh — 80x24</div>
-            </div>
-            <div class="terminal-body" id="terminal-text"></div>
-        </div>
-    </div>
-
-    <!-- أضواء الخلفية -->
-    <div class="glow-bg glow-1"></div>
-    <div class="glow-bg glow-2"></div>
-
     <header>
         <div class="logo">Cap <span>Hosam</span> 💻</div>
-        <a href="#order" class="btn-header">طلب مشروع جديد</a>
+        <a href="#order" class="btn-header">اطلب موقعك</a>
     </header>
 
     <section class="hero">
-        <div class="badge">⚙️ المبرمج المطور Cap Hosam</div>
-        <h1>مرحباً بك في <span>عالم البرمجة والمتاجر الإلكترونية</span> الفاخرة</h1>
-        <p>تصاميم برمجية مخصصة وعالية الأداء تعطي لعلامتك التجارية القوة والهيبة والمبيعات المضاعفة.</p>
-        <a href="#order" class="btn-header" style="padding: 15px 30px; font-size: 16px; background: linear-gradient(135deg, var(--neon-green), #16a34a);">📲 استشارة برمجية مباشرة عبر WhatsApp</a>
+        <div class="badge">المبرمج Cap Hosam</div>
+        <h1>تصميم ومواقع <span>احترافية وسريعة</span> لتكبير شغلك</h1>
+        <p>برمجة مواقع وتصاميم حديثة ومستجيبة مع الموبايل بالكامل مع ربط مباشر بالواتساب.</p>
+        <a href="https://wa.me/201029245615" class="btn-whatsapp">💬 تواصل واتساب مباشرةً</a>
     </section>
 
-    <section class="pricing-section">
-        <h2 class="sec-title">باقات البرمجة الاحترافية 💎</h2>
-        <p class="sec-sub">دقة المبرمج وسرعة الأداء في كل كود</p>
+    <section class="packages">
+        <h2 class="sec-title">باقات الخدمات والأسعار 💎</h2>
 
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div>
-                    <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
-                    <div class="card-price">3,500 <span>EGP</span></div>
-                    <ul class="features-list">
-                        <li>تصميم Cyberpunk مخصص</li>
-                        <li>سرعة استجابة فائقة</li>
-                        <li>ربط مباشر مع الواتساب</li>
-                        <li>استضافة مجانية</li>
-                    </ul>
-                </div>
-                <a href="#order" class="card-btn" onclick="selectPackage('صفحة هبوط احترافية')">طلب الباقة</a>
-            </div>
+        <div class="card">
+            <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
+            <div class="card-price">1,200 <span>جنيه</span></div>
+            <ul class="features">
+                <li>صفحة هبوط تسويقية مركزة</li>
+                <li>تصميم مودرن وسريع للموبايل</li>
+                <li>أزرار تحويل للواتساب</li>
+                <li>تسليم خلال 24-48 ساعة</li>
+            </ul>
+            <a href="#order" class="card-btn" onclick="setService('صفحة هبوط (1200 جنيه)')">اختيار هذه الباقة</a>
+        </div>
 
-            <div class="price-card featured">
-                <div>
-                    <div class="card-title">🌐 موقع تعريفي متكامل</div>
-                    <div class="card-price">6,500 <span>EGP</span></div>
-                    <ul class="features-list">
-                        <li>من 5 لـ 8 صفحات احترافية</li>
-                        <li>معرض أعمال تفاعلي</li>
-                        <li>تهيئة محركات البحث SEO</li>
-                        <li>دعم فني واستضافة سنة</li>
-                    </ul>
-                </div>
-                <a href="#order" class="card-btn" style="background: var(--neon-gold); color: #020617;" onclick="selectPackage('موقع تعريفي متكامل')">طلب الباقة الذهبية</a>
-            </div>
+        <div class="card featured">
+            <div class="card-title">🌐 موقع تعريفي كامل</div>
+            <div class="card-price">2,500 <span>جنيه</span></div>
+            <ul class="features">
+                <li>من 3 إلى 5 صفحات متعددة</li>
+                <li>معرض أعمال وخدمات</li>
+                <li>نموذج تواصل مباشر</li>
+                <li>دعم فني وتعديلات</li>
+            </ul>
+            <a href="#order" class="card-btn" style="background: var(--primary); color: #0f172a;" onclick="setService('موقع تعريفي (2500 جنيه)')">اختيار الباقة المميزة</a>
+        </div>
 
-            <div class="price-card">
-                <div>
-                    <div class="card-title">🛒 متجر إلكتروني احترافي</div>
-                    <div class="card-price">12,000 <span>EGP</span></div>
-                    <ul class="features-list">
-                        <li>سلة مشتريات ذكية</li>
-                        <li>ربط فودافون كاش وفيزا</li>
-                        <li>لوحة إدارة منتجات كاملة</li>
-                        <li>حماية جبارة وترتيب سريع</li>
-                    </ul>
-                </div>
-                <a href="#order" class="card-btn" onclick="selectPackage('متجر إلكتروني احترافي')">طلب المتجر</a>
-            </div>
+        <div class="card">
+            <div class="card-title">🛒 متجر إلكتروني</div>
+            <div class="card-price">4,500 <span>جنيه</span></div>
+            <ul class="features">
+                <li>عرض المنتجات والأقسام</li>
+                <li>سلة مشتريات وتأكيد طلبات</li>
+                <li>ربط فودافون كاش والواتساب</li>
+            </ul>
+            <a href="#order" class="card-btn" onclick="setService('متجر إلكتروني (4500 جنيه)')">اختيار هذه الباقة</a>
         </div>
     </section>
 
-    <section class="form-section" id="order">
+    <section class="packages" id="order">
         <div class="form-box">
-            <h3 style="text-align: center; margin-bottom: 10px;">بدء مشروعك مع Cap Hosam 💻</h3>
-            <p style="text-align: center; color: var(--text-dim); font-size: 13.5px; margin-bottom: 20px;">ادخل بياناتك وسيتم توجيهك فوراً للمحادثة المباشرة</p>
-
-            <input type="text" id="clientName" placeholder="الاسم الكريم">
-            <input type="tel" id="clientPhone" placeholder="رقم الموبايل / الواتساب">
-            
-            <select id="serviceSelect">
-                <option value="" disabled selected>اختر الباقة البرمجية</option>
-                <option value="صفحة هبوط احترافية">صفحة هبوط (3,500 EGP)</option>
-                <option value="موقع تعريفي متكامل">موقع تعريفي متكامل (6,500 EGP)</option>
-                <option value="متجر إلكتروني احترافي">متجر إلكتروني (12,000 EGP)</option>
+            <h3>تأكيد الطلب 📲</h3>
+            <input type="text" id="cName" placeholder="الاسم الكريم">
+            <input type="tel" id="cPhone" placeholder="رقم الموبايل / الواتساب">
+            <select id="cService">
+                <option value="" disabled selected>اختر الخدمة المطلوبة</option>
+                <option value="صفحة هبوط (1200 جنيه)">صفحة هبوط (1,200 جنيه)</option>
+                <option value="موقع تعريفي (2500 جنيه)">موقع تعريفي (2,500 جنيه)</option>
+                <option value="متجر إلكتروني (4500 جنيه)">متجر إلكتروني (4,500 جنيه)</option>
             </select>
-
-            <textarea id="clientNotes" rows="3" placeholder="تفاصيل أو أفكار إضافية لمشروعك"></textarea>
-
-            <button class="submit-btn" onclick="sendToWhatsapp()">📲 إرسال وتأكيد الطلب</button>
+            <textarea id="cNotes" rows="3" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+            <button class="btn-submit" onclick="sendToWA()">📲 إرسال الطلب عبر الواتساب</button>
         </div>
     </section>
 
-    <footer>جميع الحقوق محفوظة © | المبرمج Cap Hosam 👨‍💻</footer>
+    <footer>
+        جميع الحقوق محفوظة © Cap Hosam
+    </footer>
 
-    <!-- 📜 جافاسكريبت تأثير الـ Matrix والترميز البرمجي -->
     <script>
-        // خلفية Matrix Rain
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const katakana = '0123456789ABCDEF{}[]<>/$#@%&*';
-        const fontSize = 14;
-        const columns = canvas.width / fontSize;
-        const rainDrops = Array.from({ length: columns }).fill(1);
-
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(3, 7, 18, 0.08)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#00ff66';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < rainDrops.length; i++) {
-                const text = katakana.charAt(Math.floor(Math.random() * katakana.length));
-                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                }
-                rainDrops[i]++;
-            }
-        }
-        const matrixInterval = setInterval(drawMatrix, 30);
-
-        // كتابة الأكواد في التيرمينال
-        const lines = [
-            "> Initializing Cap Hosam Core Engine v3.8...",
-            "> Loading Cyber Security & High-Performance Libraries...",
-            "> Connecting to Developer Host Services... [OK]",
-            "> System Status: ONLINE.",
-            "> Welcome to Cap Hosam Development World 🚀"
-        ];
-
-        const terminalText = document.getElementById('terminal-text');
-        let lineIdx = 0;
-        let charIdx = 0;
-
-        function typeTerminal() {
-            if (lineIdx < lines.length) {
-                if (charIdx === 0) {
-                    const lineDiv = document.createElement('div');
-                    lineDiv.id = 'line-' + lineIdx;
-                    terminalText.appendChild(lineDiv);
-                }
-                
-                const currentLineDiv = document.getElementById('line-' + lineIdx);
-                currentLineDiv.innerHTML = lines[lineIdx].substring(0, charIdx + 1) + '<span class="cursor"></span>';
-                charIdx++;
-
-                if (charIdx <= lines[lineIdx].length) {
-                    setTimeout(typeTerminal, 25);
-                } else {
-                    // شيل الكيرسر من السطر اللي خلص
-                    currentLineDiv.innerHTML = lines[lineIdx];
-                    lineIdx++;
-                    charIdx = 0;
-                    setTimeout(typeTerminal, 180);
-                }
-            } else {
-                // إخفاء التيرمينال بعد اكتمال كتابة الكود
-                setTimeout(() => {
-                    document.getElementById('intro-terminal').classList.add('hide-terminal');
-                    clearInterval(matrixInterval);
-                }, 800);
-            }
+        function setService(val) {
+            document.getElementById('cService').value = val;
         }
 
-        window.addEventListener('load', typeTerminal);
-
-        function selectPackage(packageName) {
-            document.getElementById('serviceSelect').value = packageName;
-        }
-
-        function sendToWhatsapp() {
-            var name = document.getElementById('clientName').value.trim();
-            var phone = document.getElementById('clientPhone').value.trim();
-            var service = document.getElementById('serviceSelect').value;
-            var notes = document.getElementById('clientNotes').value.trim();
+        function sendToWA() {
+            var name = document.getElementById('cName').value.trim();
+            var phone = document.getElementById('cPhone').value.trim();
+            var service = document.getElementById('cService').value;
+            var notes = document.getElementById('cNotes').value.trim();
 
             if(!name || !phone || !service) {
-                alert('يرجى ملء البيانات المطلوبة لطلب الاستشارة 🌹');
+                alert('يرجى كتابة الاسم والرقم واختيار الخدمة 🌹');
                 return;
             }
 
-            var text = "أهلاً المبرمج كابتن حسام (Cap Hosam) 👋\n\nأنا: " + name + "\nرقمي: " + phone + "\nمحتاج أطلب: (" + service + ")\n" + (notes ? "ملاحظات: " + notes : "");
+            var text = "أهلاً Cap Hosam 👋\n" +
+                       "الاسم: " + name + "\n" +
+                       "الرقم: " + phone + "\n" +
+                       "الطلب: " + service + "\n" +
+                       (notes ? "ملاحظات: " + notes : "");
+
             window.location.href = "https://wa.me/201029245615?text=" + encodeURIComponent(text);
         }
     </script>
