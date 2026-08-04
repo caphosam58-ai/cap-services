@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cap Hosam | تصميم وتطوير المواقع</title>
+    <title>Cap Hosam | خدمات البرمجة والتصميم</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,8 @@
             --card-bg: #1e293b;
             --primary: #38bdf8;
             --green: #22c55e;
+            --gold: #f59e0b;
+            --purple: #a855f7;
             --text: #f8fafc;
             --text-muted: #94a3b8;
         }
@@ -34,183 +36,182 @@
             padding-bottom: 40px;
         }
 
-        /* Header */
-        header {
-            background: rgba(15, 23, 42, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        /* BANNER LOGO SECTION */
+        .logo-banner-container {
+            padding: 15px;
+            max-width: 650px;
+            margin: 10px auto 0;
         }
 
-        .logo {
-            font-size: 20px;
+        .logo-banner {
+            background: linear-gradient(135deg, #0b1329, #1c2a4a);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-banner h1 {
+            font-size: 28px;
             font-weight: 900;
             color: #fff;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
-        .logo span { color: var(--primary); }
+        .logo-banner h1 span {
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
 
-        .btn-header {
-            background: var(--primary);
-            color: #0f172a;
-            padding: 8px 16px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
+        .logo-banner .tagline {
+            color: var(--green);
             font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            direction: ltr;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 40px 20px;
-            text-align: center;
-            max-width: 600px;
+        .services-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .pill {
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11.5px;
+            font-weight: 500;
+        }
+
+        .pill.tech { border-color: var(--primary); color: var(--primary); }
+        .pill.course { border-color: var(--gold); color: var(--gold); }
+        .pill.design { border-color: var(--purple); color: var(--purple); }
+
+        .banner-phone {
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid var(--green);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 13.5px;
+            font-weight: 700;
+        }
+
+        /* GENERAL SECTIONS */
+        .section-container {
+            padding: 15px 20px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
-        .badge {
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: 28px;
-            font-weight: 900;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .hero h1 span { color: var(--primary); }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 25px;
+        .hero {
+            text-align: center;
+            margin-bottom: 10px;
         }
 
         .btn-whatsapp {
             background: var(--green);
             color: #fff;
             padding: 14px 24px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 15.5px;
             display: inline-block;
             width: 100%;
             max-width: 320px;
-        }
-
-        /* Packages */
-        .packages {
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            margin-top: 10px;
         }
 
         .sec-title {
             text-align: center;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 800;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
         }
 
         .card {
             background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px;
-            padding: 25px 20px;
-            margin-bottom: 20px;
-        }
-
-        .card.featured {
-            border: 2px solid var(--primary);
+            padding: 18px;
+            margin-bottom: 15px;
         }
 
         .card-title {
-            font-size: 20px;
+            font-size: 17px;
             font-weight: 800;
             margin-bottom: 10px;
         }
 
-        .card-price {
-            font-size: 26px;
-            font-weight: 900;
-            color: var(--green);
-            margin-bottom: 15px;
-        }
-
-        .card-price span {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        .features {
+        .service-list {
             list-style: none;
-            margin-bottom: 20px;
         }
 
-        .features li {
-            font-size: 14px;
+        .service-list li {
+            font-size: 13.5px;
             color: var(--text-muted);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        .features li::before {
-            content: "✓ ";
-            color: var(--green);
+        .service-list li span::before {
+            content: "❖ ";
+            color: var(--primary);
             font-weight: bold;
         }
 
-        .card-btn {
-            display: block;
-            background: rgba(255, 255, 255, 0.08);
-            color: #fff;
-            text-align: center;
-            padding: 12px;
-            border-radius: 8px;
+        .btn-select {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
         }
 
-        /* Form */
+        /* FORM */
         .form-box {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 25px 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .form-box h3 {
             text-align: center;
             margin-bottom: 15px;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 12px 15px;
+            padding: 12px;
             background: #0f172a;
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             color: #fff;
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 13.5px;
+            margin-bottom: 10px;
             outline: none;
         }
 
@@ -222,89 +223,116 @@
             padding: 14px;
             border-radius: 8px;
             font-weight: 800;
-            font-size: 16px;
+            font-size: 15.5px;
             cursor: pointer;
         }
 
         footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             color: var(--text-muted);
-            font-size: 13px;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Cap <span>Hosam</span> 💻</div>
-        <a href="#order" class="btn-header">اطلب موقعك</a>
-    </header>
+    <!-- البنر / اللوجو الرئيسي اللى طلبته -->
+    <div class="logo-banner-container">
+        <div class="logo-banner">
+            <h1>💻 Cap <span>Hosam</span></h1>
+            <div class="tagline">&lt;/&gt; Web Developer & Graphic Designer</div>
+            
+            <div class="services-pills">
+                <span class="pill tech">صنع مواقع ويب سايت</span>
+                <span class="pill tech">متاجر إلكترونية</span>
+                <span class="pill tech">استضافة سحابية</span>
+                <span class="pill course">كورسات Python & JavaScript</span>
+                <span class="pill design">تصميم لوجو</span>
+                <span class="pill design">ليتر هيد</span>
+                <span class="pill design">فولدر</span>
+                <span class="pill design">غلاف سوشيال</span>
+                <span class="pill design">لافتات</span>
+                <span class="pill">أي نشاط متوفر بإذن الله</span>
+            </div>
 
-    <section class="hero">
-        <div class="badge">المبرمج Cap Hosam</div>
-        <h1>تصميم ومواقع <span>احترافية وسريعة</span> لتكبير شغلك</h1>
-        <p>برمجة مواقع وتصاميم حديثة ومستجيبة مع الموبايل بالكامل مع ربط مباشر بالواتساب.</p>
-        <a href="https://wa.me/201029245615" class="btn-whatsapp">💬 تواصل واتساب مباشرةً</a>
+            <div class="banner-phone">
+                📲 للتواصل والطلب: <strong>01029245615</strong>
+            </div>
+        </div>
+    </div>
+
+    <!-- الزرار السريع -->
+    <section class="section-container hero">
+        <a href="https://wa.me/201029245615" class="btn-whatsapp">💬 تواصل عبر الواتساب مباشرة</a>
     </section>
 
-    <section class="packages">
-        <h2 class="sec-title">باقات الخدمات والأسعار 💎</h2>
+    <!-- قائمة الخدمات التفصيلية -->
+    <section class="section-container">
+        <h2 class="sec-title">قائمة الخدمات المتاحة 💎</h2>
 
+        <!-- البرمجة -->
         <div class="card">
-            <div class="card-title">🚀 صفحة هبوط (Landing Page)</div>
-            <div class="card-price">1,200 <span>جنيه</span></div>
-            <ul class="features">
-                <li>صفحة هبوط تسويقية مركزة</li>
-                <li>تصميم مودرن وسريع للموبايل</li>
-                <li>أزرار تحويل للواتساب</li>
-                <li>تسليم خلال 24-48 ساعة</li>
+            <div class="card-title" style="color: var(--primary);">🌐 البرمجة وتطوير المواقع</div>
+            <ul class="service-list">
+                <li><span>صنع مواقع ويب سايت</span> <a href="#order" class="btn-select" onclick="setService('صنع مواقع ويب سايت')">طلب</a></li>
+                <li><span>صنع متاجر إلكترونية</span> <a href="#order" class="btn-select" onclick="setService('صنع متاجر إلكترونية')">طلب</a></li>
+                <li><span>صنع مواقع استضافة سحابية</span> <a href="#order" class="btn-select" onclick="setService('صنع مواقع استضافة سحابية')">طلب</a></li>
+                <li><span>أي نشاط آخر متوفر بإذن الله</span> <a href="#order" class="btn-select" onclick="setService('مشروع/نشاط مخصص')">طلب</a></li>
             </ul>
-            <a href="#order" class="card-btn" onclick="setService('صفحة هبوط (1200 جنيه)')">اختيار هذه الباقة</a>
         </div>
 
-        <div class="card featured">
-            <div class="card-title">🌐 موقع تعريفي كامل</div>
-            <div class="card-price">2,500 <span>جنيه</span></div>
-            <ul class="features">
-                <li>من 3 إلى 5 صفحات متعددة</li>
-                <li>معرض أعمال وخدمات</li>
-                <li>نموذج تواصل مباشر</li>
-                <li>دعم فني وتعديلات</li>
+        <!-- الكورسات -->
+        <div class="card">
+            <div class="card-title" style="color: var(--gold);">🎓 كورسات البرمجة (Courses)</div>
+            <ul class="service-list">
+                <li><span>كورس Python Language</span> <a href="#order" class="btn-select" onclick="setService('كورس Python')">حجز</a></li>
+                <li><span>كورس JavaScript</span> <a href="#order" class="btn-select" onclick="setService('كورس JavaScript')">حجز</a></li>
             </ul>
-            <a href="#order" class="card-btn" style="background: var(--primary); color: #0f172a;" onclick="setService('موقع تعريفي (2500 جنيه)')">اختيار الباقة المميزة</a>
         </div>
 
+        <!-- التصميم -->
         <div class="card">
-            <div class="card-title">🛒 متجر إلكتروني</div>
-            <div class="card-price">4,500 <span>جنيه</span></div>
-            <ul class="features">
-                <li>عرض المنتجات والأقسام</li>
-                <li>سلة مشتريات وتأكيد طلبات</li>
-                <li>ربط فودافون كاش والواتساب</li>
+            <div class="card-title" style="color: var(--purple);">🎨 خدمات التصميم والتأسيس</div>
+            <ul class="service-list">
+                <li><span>تصميم لوجو احترافي</span> <a href="#order" class="btn-select" onclick="setService('تصميم لوجو احترافي')">طلب</a></li>
+                <li><span>تصميم ليتر هيد (Letterhead)</span> <a href="#order" class="btn-select" onclick="setService('تصميم ليتر هيد')">طلب</a></li>
+                <li><span>تصميم الفولدر</span> <a href="#order" class="btn-select" onclick="setService('تصميم الفولدر')">طلب</a></li>
+                <li><span>تصميم غلاف مواقع سوشيال</span> <a href="#order" class="btn-select" onclick="setService('تصميم غلاف سوشيال')">طلب</a></li>
+                <li><span>تصميم لافتات</span> <a href="#order" class="btn-select" onclick="setService('تصميم لافتات')">طلب</a></li>
             </ul>
-            <a href="#order" class="card-btn" onclick="setService('متجر إلكتروني (4500 جنيه)')">اختيار هذه الباقة</a>
         </div>
     </section>
 
-    <section class="packages" id="order">
+    <!-- نموذج الطلب المباشر -->
+    <section class="section-container" id="order">
         <div class="form-box">
             <h3>تأكيد الطلب 📲</h3>
             <input type="text" id="cName" placeholder="الاسم الكريم">
             <input type="tel" id="cPhone" placeholder="رقم الموبايل / الواتساب">
+            
             <select id="cService">
-                <option value="" disabled selected>اختر الخدمة المطلوبة</option>
-                <option value="صفحة هبوط (1200 جنيه)">صفحة هبوط (1,200 جنيه)</option>
-                <option value="موقع تعريفي (2500 جنيه)">موقع تعريفي (2,500 جنيه)</option>
-                <option value="متجر إلكتروني (4500 جنيه)">متجر إلكتروني (4,500 جنيه)</option>
+                <option value="" disabled selected>اختر الخدمة أو الكورس المطلوبة</option>
+                <option value="صنع مواقع ويب سايت">صنع مواقع ويب سايت</option>
+                <option value="صنع متاجر إلكترونية">صنع متاجر إلكترونية</option>
+                <option value="صنع مواقع استضافة سحابية">صنع مواقع استضافة سحابية</option>
+                <option value="كورس Python">كورس Python Language</option>
+                <option value="كورس JavaScript">كورس JavaScript</option>
+                <option value="تصميم لوجو احترافي">تصميم لوجو احترافي</option>
+                <option value="تصميم ليتر هيد">تصميم ليتر هيد</option>
+                <option value="تصميم الفولدر">تصميم الفولدر</option>
+                <option value="تصميم غلاف سوشيال">تصميم غلاف مواقع سوشيال</option>
+                <option value="تصميم لافتات">تصميم لافتات</option>
+                <option value="نشاط مخصص آخر">نشاط مخصص آخر</option>
             </select>
+
             <textarea id="cNotes" rows="3" placeholder="ملاحظات إضافية (اختياري)"></textarea>
-            <button class="btn-submit" onclick="sendToWA()">📲 إرسال الطلب عبر الواتساب</button>
+            <button class="btn-submit" onclick="sendToWA()">📲 إرسال الطلب للواتساب</button>
         </div>
     </section>
 
     <footer>
-        جميع الحقوق محفوظة © Cap Hosam
+        جميع الحقوق محفوظة © Cap Hosam 💻
     </footer>
 
     <script>
@@ -326,11 +354,11 @@
             var text = "أهلاً Cap Hosam 👋\n" +
                        "الاسم: " + name + "\n" +
                        "الرقم: " + phone + "\n" +
-                       "الطلب: " + service + "\n" +
+                       "الخدمة المطلوبة: " + service + "\n" +
                        (notes ? "ملاحظات: " + notes : "");
 
             window.location.href = "https://wa.me/201029245615?text=" + encodeURIComponent(text);
         }
     </script>
 </body>
-    </html>
+</html>
